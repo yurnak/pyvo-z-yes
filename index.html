@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пиво з ЄС напряму</title>
+<meta name="description" content="Як заклад у Польщі може купувати пиво напряму в броварні з ЄС: реєстрації, e-SAD, акциз, забезпечення і пастки у формулярах.">
+<meta name="robots" content="noindex">
+  <style>
+    :root{color-scheme:light}
+    *{box-sizing:border-box}
+    body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+    img{max-width:100%}
+    [hidden]{display:none!important}
+  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<style>
+:root{
+  --paper:#F6F5F1; --surface:#FFFFFF; --surface-2:#FBFAF7;
+  --ink:#1A2029; --ink-soft:#56616F; --line:#DEDBD3; --line-soft:#EBE8E1;
+  --accent:#1D3A57; --accent-soft:#E6EDF4; --accent-line:#BFD2E3;
+  --malt:#9C6B16; --malt-soft:#FAF2E0; --malt-line:#E8D4A6;
+  --danger:#9A3A2A; --danger-soft:#FAEBE7; --danger-line:#E8C3B9;
+  --good:#3A6648; --good-soft:#E7F0E9; --good-line:#BDD6C4;
+  --radius:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#13171C; --surface:#1A1F26; --surface-2:#1E242B;
+    --ink:#E9E7E2; --ink-soft:#9BA4AF; --line:#2B323B; --line-soft:#232A32;
+    --accent:#86B6DF; --accent-soft:#1C2A37; --accent-line:#2F4559;
+    --malt:#D9A64E; --malt-soft:#271F12; --malt-line:#473718;
+    --danger:#E28A76; --danger-soft:#2B1915; --danger-line:#4B2A22;
+    --good:#82BB94; --good-soft:#17251C; --good-line:#2A4231;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#13171C; --surface:#1A1F26; --surface-2:#1E242B;
+  --ink:#E9E7E2; --ink-soft:#9BA4AF; --line:#2B323B; --line-soft:#232A32;
+  --accent:#86B6DF; --accent-soft:#1C2A37; --accent-line:#2F4559;
+  --malt:#D9A64E; --malt-soft:#271F12; --malt-line:#473718;
+  --danger:#E28A76; --danger-soft:#2B1915; --danger-line:#4B2A22;
+  --good:#82BB94; --good-soft:#17251C; --good-line:#2A4231;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Literata",Georgia,"Times New Roman",serif;
+  font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:0 72px}
+
+.masthead{border-bottom:1px solid var(--line); background:var(--surface)}
+.masthead .wrap{padding-block:26px 24px}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 10px;
+}
+h1{
+  font-family:"Archivo",system-ui,sans-serif; font-weight:700;
+  font-size:clamp(28px,5vw,40px); line-height:1.1; letter-spacing:-.015em;
+  margin:0 0 12px; text-wrap:balance;
+}
+.standfirst{margin:0; color:var(--ink-soft); max-width:64ch}
+
+.cols{display:grid; grid-template-columns:1fr; gap:34px; margin-top:34px}
+@media (min-width:1000px){
+  .cols{grid-template-columns:210px minmax(0,1fr); gap:52px}
+  .rail{position:sticky; top:calc(env(safe-area-inset-top,0px) + 18px); align-self:start}
+}
+.rail nav{display:flex; flex-wrap:wrap; gap:6px}
+@media (min-width:1000px){ .rail nav{flex-direction:column; gap:1px} }
+.rail a{
+  font-family:"Archivo",system-ui,sans-serif; font-size:13px; font-weight:500;
+  color:var(--ink-soft); text-decoration:none; padding:6px 10px;
+  border-radius:6px; border:1px solid var(--line-soft);
+}
+@media (min-width:1000px){ .rail a{border:0; border-left:2px solid transparent; border-radius:0; padding:5px 0 5px 12px} }
+.rail a:hover{color:var(--accent); background:var(--accent-soft)}
+@media (min-width:1000px){ .rail a:hover{background:none; border-left-color:var(--accent-line)} }
+
+main{min-width:0}
+section{margin-bottom:46px; scroll-margin-top:24px}
+h2{font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:22px; letter-spacing:-.01em; margin:0 0 6px; text-wrap:balance}
+h3{font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:16px; margin:26px 0 8px}
+.lede{color:var(--ink-soft); margin:0 0 20px; max-width:66ch}
+p{margin:0 0 14px; max-width:68ch}
+ul.plain{margin:0 0 14px; padding-left:20px; max-width:68ch}
+ul.plain li{margin-bottom:5px}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.88em}
+code{background:var(--surface-2); border:1px solid var(--line-soft); border-radius:4px; padding:1px 5px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+
+/* routes */
+.routes{display:grid; grid-template-columns:1fr; gap:12px; margin-top:22px}
+@media (min-width:700px){ .routes{grid-template-columns:1fr 1fr} }
+.route{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px}
+.route.pick{border-color:var(--accent-line); box-shadow:0 0 0 1px var(--accent-line)}
+.route .tag{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);
+}
+.route h3{margin:4px 0 8px; font-size:17px}
+.route p{font-size:14.5px; color:var(--ink-soft); margin:0 0 8px}
+.route ul{margin:0; padding-left:18px; font-size:14px; color:var(--ink-soft)}
+.route li{margin-bottom:4px}
+
+/* steps */
+.steps{list-style:none; margin:0; padding:0; counter-reset:s}
+.step{
+  counter-increment:s; position:relative; background:var(--surface);
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:15px 16px 15px 56px; margin-bottom:10px;
+}
+.step::before{
+  content:counter(s); position:absolute; left:16px; top:15px;
+  width:26px; height:26px; border-radius:50%;
+  background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent-line);
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; font-weight:600;
+  display:grid; place-items:center;
+}
+.step h4{font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:15.5px; margin:2px 0 5px}
+.step p{margin:0 0 6px; font-size:14.5px; color:var(--ink-soft)}
+.step p:last-child{margin-bottom:0}
+.step .form{
+  display:inline-block; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px; font-weight:600; letter-spacing:.04em;
+  background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent-line);
+  padding:2px 7px; border-radius:5px; margin-left:6px; vertical-align:2px;
+}
+.deadline{
+  display:inline-block; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10.5px; letter-spacing:.07em; text-transform:uppercase;
+  background:var(--danger-soft); color:var(--danger); border:1px solid var(--danger-line);
+  padding:2px 7px; border-radius:20px; margin-left:6px; vertical-align:2px;
+}
+.proof{
+  font-size:13.5px; background:var(--good-soft); border-left:2px solid var(--good-line);
+  padding:7px 11px; border-radius:0 6px 6px 0; margin-top:9px;
+}
+.proof b{color:var(--good)}
+
+/* calculator */
+.calc{background:var(--malt-soft); border:1px solid var(--malt-line); border-radius:var(--radius); padding:18px 18px 16px}
+.calc .formula{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; color:var(--malt); margin:0 0 16px}
+.fields{display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); gap:12px}
+.field label{display:block; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px}
+.field input{
+  width:100%; padding:9px 10px; font-size:16px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums;
+  background:var(--surface); color:var(--ink); border:1px solid var(--malt-line); border-radius:7px;
+}
+.calc .small{display:flex; align-items:flex-start; gap:9px; margin-top:14px; font-size:14px; max-width:60ch}
+.calc .small input{margin-top:4px; accent-color:var(--malt); width:17px; height:17px; flex:none}
+.out{display:grid; grid-template-columns:1fr; gap:1px; margin-top:16px; background:var(--malt-line); border:1px solid var(--malt-line); border-radius:8px; overflow:hidden}
+@media (min-width:520px){ .out{grid-template-columns:repeat(3,1fr)} }
+.out div{background:var(--surface); padding:12px 14px}
+.out .k{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft)}
+.out .n{font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:21px; font-variant-numeric:tabular-nums; margin-top:2px}
+.out .hint{font-size:12.5px; color:var(--ink-soft); margin-top:2px; line-height:1.4}
+.out .peak .n{color:var(--malt)}
+
+/* traps */
+.trap{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--danger); border-radius:0 var(--radius) var(--radius) 0; padding:14px 16px; margin-bottom:10px}
+.trap h4{font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:15px; margin:0 0 5px}
+.trap p{margin:0 0 6px; font-size:14.5px; color:var(--ink-soft)}
+.trap p:last-child{margin:0}
+.trap .fix{color:var(--ink)}
+.trap .fix b{color:var(--good)}
+
+.note{border-radius:0 8px 8px 0; padding:13px 16px; margin:16px 0; font-size:14.5px}
+.note p{margin:0 0 8px; max-width:none} .note p:last-child{margin:0}
+.note.warn{background:var(--danger-soft); border-left:3px solid var(--danger)}
+.note.info{background:var(--accent-soft); border-left:3px solid var(--accent-line)}
+.note.ok{background:var(--good-soft); border-left:3px solid var(--good)}
+.note b{font-family:"Archivo",system-ui,sans-serif}
+
+.copy{position:relative; background:var(--surface-2); border:1px solid var(--line); border-radius:var(--radius); margin:12px 0 18px}
+.copy pre{margin:0; padding:15px 16px; overflow-x:auto; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.68; white-space:pre; color:var(--ink)}
+.copy .cbtn{
+  position:absolute; top:9px; right:9px; font-family:"Archivo",system-ui,sans-serif;
+  font-size:11.5px; font-weight:600; background:var(--surface); color:var(--ink-soft);
+  border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer;
+}
+.copy .cbtn:hover{color:var(--accent); border-color:var(--accent-line)}
+
+.scroller{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:520px; font-size:14px}
+th,td{text-align:left; padding:10px 14px; border-top:1px solid var(--line-soft); vertical-align:top}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); border-top:0}
+td .mono{font-weight:600}
+tbody tr:hover{background:var(--surface-2)}
+
+footer{border-top:1px solid var(--line); margin-top:10px; padding-top:18px; color:var(--ink-soft); font-size:13.5px}
+footer p{max-width:70ch}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Польща · акциз · EMCS</p>
+    <h1>Пиво з ЄС напряму</h1>
+    <p class="standfirst">Як заклад у Польщі може купувати пиво безпосередньо в закордонної броварні — статус <span class="mono">uprawniony odbiorca</span>, документ e&#8209;SAD, акциз і забезпечення. Маршрут пройдений на практиці у вересні 2026 року.</p>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <aside class="rail">
+    <nav aria-label="Розділи">
+      <a href="#rozvylka">Чи це ваш шлях</a>
+      <a href="#peredumovy">Передумови</a>
+      <a href="#rejestr">Реєстрація</a>
+      <a href="#pastky">Пастки у формі</a>
+      <a href="#zabezp">Забезпечення</a>
+      <a href="#kalk">Калькулятор</a>
+      <a href="#cykl">Цикл поставки</a>
+      <a href="#postach">Постачальник</a>
+      <a href="#dribnytsi">Дрібниці</a>
+      <a href="#formy">Формуляри</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <section id="rozvylka">
+      <h2>Чи це взагалі ваш шлях</h2>
+      <p class="lede">Перш ніж реєструватися — чесне порівняння. Для дрібних обсягів прямий імпорт часто програє.</p>
+
+      <div class="routes">
+        <div class="route">
+          <div class="tag">Варіант A</div>
+          <h3>Купувати в польського імпортера</h3>
+          <p>Акциз уже сплачений і сидить у ціні. Звичайна фактура VAT.</p>
+          <ul>
+            <li>Нуль формальностей</li>
+            <li>Ціна вища на 15–30%</li>
+            <li>Ризик помилки нульовий</li>
+          </ul>
+        </div>
+        <div class="route pick">
+          <div class="tag">Варіант B — ця інструкція</div>
+          <h3>Ввозити самому через e-SAD</h3>
+          <p>Ви стаєте <span class="mono">uprawnionym odbiorcą</span> і платите акциз самі.</p>
+          <ul>
+            <li>Реєстрації + декларація на кожну поставку</li>
+            <li>Дешевше за літр</li>
+            <li>Штрафи за прострочення строків</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note info">
+        <p><b>Коли варіант B справді вигідний.</b> Не тоді, коли треба зекономити на кількох кегах — економія з'їдається роботою бухгалтера. А тоді, коли потрібної броварні <b>ніхто в Польщі не возить</b>. Це найчастіша реальна причина робити це самому.</p>
+      </div>
+
+      <div class="note warn">
+        <p><b>Розвилка, яка міняє все: чи ви варите пиво самі?</b></p>
+        <p>Якщо так — у вас має бути <span class="mono">skład podatkowy</span>, і тоді ви можете приймати товар у процедурі призупинення акцизу на документі e&#8209;AD. Це інший, зручніший режим: акциз платиться аж при випуску зі складу. Уся ця інструкція тоді не ваша.</p>
+      </div>
+    </section>
+
+    <section id="peredumovy">
+      <h2>Передумови</h2>
+      <p class="lede">Три речі мають бути на місці до того, як ви почнете щось реєструвати.</p>
+
+      <h3>1. Ліцензія на продаж алкоголю — на ту саму фірму</h3>
+      <p>Фірма, яка ввозить пиво, фірма з ліцензією і фірма, яка продає гостям, мають бути <b>однією юридичною особою</b>. Акцизний номер між фірмами не переноситься, а передача товару «сестринській» фірмі — це вже оптовий продаж, на який потрібен окремий дозвіл.</p>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Категорія ліцензії</th><th>Що дозволяє продавати</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">A</td><td>напої до 4,5% <b>і пиво</b></td></tr>
+            <tr><td class="mono">B</td><td>4,5–18%, крім пива — сюди йде вино і міцніший сидр</td></tr>
+            <tr><td class="mono">C</td><td>понад 18%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2. У кого вам узагалі можна купувати</h3>
+      <p>Власник роздрібної ліцензії зобов'язаний закуповуватися тільки у <b>виробників</b> або у підприємців із польським дозволом на оптовий продаж <span class="mono">(art. 18 ust. 7 pkt 3 ustawy o wychowaniu w trzeźwości)</span>.</p>
+      <div class="note warn">
+        <p>Купівля напряму в закордонної <b>броварні</b> в цю норму вписується. Купівля в закордонної <b>гуртівні</b> без польського оптового дозволу — сіра зона. Санкція: відкликання ліцензії і <b>три роки</b> без права подати нову. Ризик непропорційно великий проти економії.</p>
+      </div>
+
+      <h3>3. Реєстрація VAT-UE</h3>
+      <p>Оновити <span class="mono">VAT-R</span>, частина <span class="mono">C.3</span>. Потрібен NIP із префіксом <span class="mono">PL</span>, видимий у базі VIES — саме туди дивиться постачальник, вирішуючи, чи виставляти фактуру без свого місцевого VAT. Робиться паралельно з рештою, не чекаючи акцизного номера.</p>
+    </section>
+
+    <section id="rejestr">
+      <h2>Реєстрація</h2>
+      <p class="lede">Усе через PUESC, усе безкоштовно. Кроки суворо послідовні — наступний формуляр не відкриється, поки не закрито попередній.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <h4>Обліковий запис на PUESC</h4>
+          <p>Конто <b>з розширеним обсягом повноважень</b> — потрібен Profil Zaufany або кваліфікований електронний підпис. Потім <span class="mono">powiązanie reprezentanta</span>: прив'язати себе до фірми з повноваженням <span class="mono">składanie wniosków w zakresie akcyzy</span>.</p>
+          <div class="proof"><b>Доказ:</b> формуляр <span class="mono">WRP0001</span> відкривається і дає обрати вашу фірму.</div>
+        </li>
+        <li class="step">
+          <h4>Реєстрація фірми та вписання до CRPA<span class="form">WRP0001</span></h4>
+          <p>Одна заява, не дві. В <span class="mono">OBSZARY DZIAŁANIA</span> відзначаєте <b>тільки</b> <span class="mono">akcyza</span> — це розгортає всі акцизні підрозділи. Група товарів: <span class="mono">B000 — piwo</span>.</p>
+          <p>Жорсткого строку немає, зазвичай кілька днів.</p>
+          <div class="proof"><b>Доказ:</b> приходить <span class="mono">Potwierdzenie rejestracji</span> з наданням <span class="mono">ID SISC</span> фірми.</div>
+        </li>
+        <li class="step">
+          <h4>Акцизний номер uprawnionego odbiorcy<span class="form">WDAUO01</span></h4>
+          <p>Орган — <b>Dyrektor Izby Administracji Skarbowej w Poznaniu</b>. Сторінка PUESC обіцяє близько 7 днів; на практиці рішення прийшло того ж дня.</p>
+          <p>Є також <span class="mono">WDAUOJ01</span> — одноразовий номер під одну партію, діє 3 місяці, вимагає наперед вказати обсяг і постачальника. Для регулярних поставок беріть постійний.</p>
+          <div class="proof"><b>Доказ:</b> номер формату <span class="mono">PL</span> + 11 знаків. Остаточна перевірка — хай постачальник заведе <b>чернетку e-SAD</b> з ним і скаже, чи система прийняла.</div>
+        </li>
+        <li class="step">
+          <h4>Акцизне забезпечення</h4>
+          <p>Має бути внесене <b>до того, як товар виїде</b> від постачальника. Деталі — у наступному розділі.</p>
+          <div class="proof"><b>Доказ:</b> формуляр <span class="mono">ZAB_SALDO</span> показує суму. Банківська виписка доказом не є.</div>
+        </li>
+      </ol>
+
+      <div class="note warn">
+        <p><b>ID SISC — це не акцизний номер.</b> Легко переплутати: обидва починаються на <span class="mono">PL</span>, обидва приходять із PUESC. <span class="mono">ID SISC</span> (17 знаків) ідентифікує фірму на платформі. <span class="mono">Numer akcyzowy</span> (13 знаків) — це те, чого чекає постачальник для e&#8209;SAD. Перший видає SZPROT, другий — Dyrektor IAS w Poznaniu.</p>
+      </div>
+    </section>
+
+    <section id="pastky">
+      <h2>Пастки у формі WRP0001</h2>
+      <p class="lede">П'ять місць, де форма пройде валідацію без помилок, а наслідок побачите через тижні.</p>
+
+      <div class="trap">
+        <h4>Пиво не додалося до списку товарів</h4>
+        <p>У полі <span class="mono">Grupa wyrobów</span> пиво й вино — <b>різні групи</b>. Якщо обрати вино, натиснути <span class="mono">Dodaj</span> і поїхати далі, пиво лишиться незареєстрованим.</p>
+        <p class="fix"><b>Як правильно:</b> спершу <span class="mono">Piwo → B000 → Dodaj</span>, і тільки потім, за потреби, вино. Має вийти окремий рядок на кожну групу.</p>
+      </div>
+
+      <div class="trap">
+        <h4>Декларації — «Nie» за замовчуванням</h4>
+        <p>Питання <span class="mono">Czy podmiot będzie składał deklaracje podatkowe lub uproszczone?</span> стоїть на <span class="mono">Nie</span>. Ви ж подаватимете <span class="mono">AKC-UA(3)</span> після кожної поставки.</p>
+        <p class="fix"><b>Як правильно:</b> <b>Tak</b> — і далі вкажіть місяць та квартал очікуваної першої поставки.</p>
+      </div>
+
+      <div class="trap">
+        <h4>Адреса діяльності — автоматичне «Tak»</h4>
+        <p>На питання, чи адреса діяльності збігається з сідзибою, легко натиснути <span class="mono">Tak</span>, не задумавшись. Якщо у фірми віртуальний офіс — місцем акцизної діяльності стане офіс, куди товар ніколи не приїде.</p>
+        <p class="fix"><b>Як правильно:</b> сюди йде адреса, за якою фура <b>фізично розвантажиться</b>. Вона ж потім піде постачальнику як <span class="mono">place of receipt</span> в e&#8209;SAD — розбіжність означає проблему з переміщенням.</p>
+      </div>
+
+      <div class="trap">
+        <h4>Substytucja при законному представництві</h4>
+        <p>Якщо ви відзначили <span class="mono">Jestem ustawowym reprezentantem podmiotu</span>, то на питання <span class="mono">Czy pełnomocnictwo zostało udzielone w ramach substytucji?</span> відповідь <span class="mono">Tak</span> створює суперечність: ваше право випливає з KRS, а не з чийогось доручення.</p>
+        <p class="fix"><b>Як правильно:</b> <b>Nie</b>. Інакше від вас вимагатимуть додати <span class="mono">upoważnienie</span> плюс <span class="mono">opłatę skarbową</span> 17 zł за документ, якого не існує.</p>
+      </div>
+
+      <div class="trap">
+        <h4>Орган KAS не за тією дільницею</h4>
+        <p>Акцизою відає обмежене коло урядів, кожен зі своїм територіальним засягом. Наприклад, <span class="mono">US Warszawa-Ursynów</span> покриває лівобережні дільниці столиці та powiat piaseczyński — і не покриває Прагу, Таргувек чи Білоленку.</p>
+        <p class="fix"><b>Як правильно:</b> беручи підставу <span class="mono">art. 14 ust. 3</span> (одне місце виконання дій), орган обирають <b>за адресою закладу</b>, а не за сідзибою фірми. Звірте дільницю зі списком у полі <span class="mono">Zakres terytorialny</span>.</p>
+      </div>
+
+      <div class="note info">
+        <p><b>Решта секцій простіша.</b> <span class="mono">ODDZIAŁY</span> — пропустити, якщо немає зареєстрованих у KRS підрозділів. <span class="mono">REPREZENTANT (PODMIOT)</span> — <span class="mono">Nie</span>. <span class="mono">INFORMACJE DODATKOWE</span> і załączniki — порожні, якщо подає член правління. В <span class="mono">KANAŁY KOMUNIKACJI</span> вкажіть <b>спільну скриньку фірми</b>, не особисту, і систему <span class="mono">WSZYSTKIE</span>.</p>
+      </div>
+    </section>
+
+    <section id="zabezp">
+      <h2>Акцизне забезпечення</h2>
+      <p class="lede">Це застава, а не податок. Гроші заморожуються і повертаються після сплати акцизу.</p>
+
+      <p>Пиво приїздить, коли польський акциз ще не сплачений — його платять протягом 10 днів після отримання. Забезпечення закриває саме цей проміжок: якщо платник зникне, держава візьме своє із застави.</p>
+
+      <h3>Як рухаються гроші</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>День</th><th>Подія</th><th>Заморожено</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">0</td><td>Вносимо заставу</td><td class="mono">−акциз</td></tr>
+            <tr><td class="mono">1</td><td>Постачальник відкриває e-SAD, фура їде</td><td class="mono">−акциз</td></tr>
+            <tr><td class="mono">3</td><td>Приймаємо товар, шлемо raport odbioru</td><td class="mono">−акциз</td></tr>
+            <tr><td class="mono">5</td><td>Подаємо AKC-UA і платимо акциз</td><td class="mono">−подвійна сума</td></tr>
+            <tr><td class="mono">~6</td><td>Забезпечення звільняється</td><td class="mono">−акциз</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>На кілька днів потрібна подвійна сума. На дрібних партіях непомітно, на палетах це вже планування грошей.</p>
+
+      <h3>Форма</h3>
+      <p>Закон дозволяє готівковий депозит, банківську чи страхову гарантію, підтверджений чек, власний вексель. На малих обсягах — <b>готівковий депозит</b> на рахунок податкової; решта має сенс від десятків тисяч, де заморожувати власні гроші дорого.</p>
+      <p><span class="mono">Jednorazowe</span> покриває одну партію, <span class="mono">generalne</span> — поточні поставки, з «обертанням» суми: при відправці резервується, після сплати акцизу вивільняється.</p>
+
+      <div class="note warn">
+        <p><b>Тут єдина серйозна невизначеність усього маршруту.</b> Яку саме форму складати і через який формуляр — за документацією PUESC встановити не вдалося. Формуляр <span class="mono">WDCGU01</span> за описом виглядає як <b>митне</b> забезпечення: вимагає EORI, орган — dyrektor IAS, строк розгляду до 120 днів. Для акцизного орган зазвичай інший.</p>
+        <p>Не плануйте першу поставку на генеральному забезпеченні, доки не отримаєте підтвердження. Питання до свого <span class="mono">urzędu skarbowego</span> — нижче.</p>
+      </div>
+
+      <div class="copy">
+        <button class="cbtn" type="button" data-copy>Копіювати</button>
+        <pre>Jestem uprawnionym odbiorcą piwa, mam już numer akcyzowy.
+Planuję pierwsze nabycie wewnątrzwspólnotowe. Jaką formę
+zabezpieczenia akcyzowego mam złożyć i przez jaki formularz
+na PUESC — jednorazowe czy generalne?</pre>
+      </div>
+    </section>
+
+    <section id="kalk">
+      <h2>Калькулятор акцизу</h2>
+      <p class="lede">Акциз на пиво рахується не від літрів, а від екстрактивності — градусів Плато, які вказує виробник. Та сама сума йде в забезпечення.</p>
+
+      <div class="calc">
+        <p class="formula">гектолітри × °Plato × 11,47 zł &nbsp;·&nbsp; ставка 2026, зростає на 5% щороку до 2027</p>
+        <div class="fields">
+          <div class="field">
+            <label for="qty">Одиниць</label>
+            <input id="qty" type="number" inputmode="decimal" min="0" step="1" value="10">
+          </div>
+          <div class="field">
+            <label for="vol">Літрів / шт</label>
+            <input id="vol" type="number" inputmode="decimal" min="0" step="0.5" value="30">
+          </div>
+          <div class="field">
+            <label for="plato">°Plato</label>
+            <input id="plato" type="number" inputmode="decimal" min="0" step="0.1" value="12">
+          </div>
+        </div>
+        <label class="small" for="smallprod">
+          <input id="smallprod" type="checkbox">
+          <span>Малий незалежний виробник — до 200 000 гл/рік. Ставка вдвічі менша, але постачальник має зробити самосертифікацію в полі e&#8209;SAD. Броварні часто про це забувають — питайте прямо.</span>
+        </label>
+        <div class="out">
+          <div>
+            <div class="k">Обсяг</div>
+            <div class="n" id="o-hl">3,00 гл</div>
+            <div class="hint">300 л</div>
+          </div>
+          <div>
+            <div class="k">Акциз</div>
+            <div class="n" id="o-akc">413 zł</div>
+            <div class="hint" id="o-per">1,38 zł за літр</div>
+          </div>
+          <div class="peak">
+            <div class="k">Пік потреби</div>
+            <div class="n" id="o-peak">826 zł</div>
+            <div class="hint">застава + акциз одночасно, кілька днів</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:14px">База VAT при внутрішньоспільнотному придбанні <b>включає акциз</b> — 23% рахуються від ціни разом з ним.</p>
+    </section>
+
+    <section id="cykl">
+      <h2>Цикл поставки</h2>
+      <p class="lede">П'ять кроків, два жорсткі строки. Відлік починається від фізичного отримання товару — не від фактури й не від виїзду фури.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <h4>Перевіряємо забезпечення</h4>
+          <p><span class="mono">ZAB_SALDO</span> має показувати суму, яка покриває акциз партії.</p>
+          <div class="proof"><b>Доказ:</b> саме <span class="mono">ZAB_SALDO</span>. Переказ грошей ще не означає зареєстроване забезпечення.</div>
+        </li>
+        <li class="step">
+          <h4>Постачальник відкриває e-SAD</h4>
+          <p>Передаєте акцизний номер, PL-NIP і точну адресу отримання. Документ створюється в EMCS до початку транспортування.</p>
+          <div class="proof"><b>Доказ:</b> отриманий <span class="mono">ARC</span> — реєстраційний код переміщення. Немає ARC — фура не виїжджає.</div>
+        </li>
+        <li class="step">
+          <h4>Приймаємо товар</h4>
+          <p>Перерахувати все <b>до</b> надсилання рапорту. Нестача чи пошкодження фіксуються в рапорті, а не «по телефону» — від нього рахується акциз.</p>
+        </li>
+        <li class="step">
+          <h4>Raport odbioru в EMCS<span class="deadline">5 робочих днів</span></h4>
+          <p>Надсилає особа, зареєстрована для комунікації з EMCS PL2, з електронним підписом.</p>
+          <div class="proof"><b>Доказ:</b> статус переміщення за <span class="mono">ARC</span> змінився на завершений. Постачальник це бачить — він чекає рапорт, щоб повернути власний акциз.</div>
+        </li>
+        <li class="step">
+          <h4>Декларація AKC-UA(3) і сплата<span class="deadline">10 днів</span></h4>
+          <p>Тільки електронно через PUESC. Заповнити, підписати, надіслати з <span class="mono">Mój pulpit → Dokumenty do wysyłki</span>. Оплата — <span class="mono">E-Płatności</span> або переказ на рахунок із формуляра.</p>
+          <div class="proof"><b>Доказ — дві речі:</b> <span class="mono">UPO</span> на декларацію <b>і</b> списання грошей. UPO не означає сплату — це найчастіша помилка.</div>
+        </li>
+      </ol>
+
+      <div class="note ok">
+        <p><b>Першу поставку робіть навмисно малою.</b> Два-три кеги, не палета. Весь ланцюг проганяється на сумі, де помилка коштує сотні злотих, і стає видно реальну трудомісткість.</p>
+      </div>
+
+      <h3>Якщо все ж помилилися</h3>
+      <p><b>Korekta deklaracji</b> — помилку в <span class="mono">AKC-UA</span> виправляють, доплативши різницю з відсотками. <b>Czynny żal</b> — якщо строк прострочено і ви повідомили самі, до того як податкова помітила, штрафу за KKS зазвичай не буде.</p>
+      <p>Звідси правило: наближається десятий день, а °Plato досі немає — подавайте з наявними даними й коригуйте потім. Прострочення виправити важче, ніж цифру.</p>
+    </section>
+
+    <section id="postach">
+      <h2>Постачальник</h2>
+      <p class="lede">Вузьке місце зазвичай не у вас, а на його боці. Ці питання задавайте <b>до</b> того, як почнете реєстрації.</p>
+
+      <h3>Чому броварні не люблять e-SAD</h3>
+      <p>При e&#8209;SAD постачальник відвантажує товар, з якого <b>вже сплачено акциз у його країні</b>, і потім подає заяву на повернення — додавши ваш <span class="mono">raport odbioru</span> і доказ сплати польського акцизу. Заради кількох кегів ніхто цим займатися не хоче. Ось справжня причина, чому «напряму мало хто працює».</p>
+
+      <div class="note warn">
+        <p><b>Ризик подвійного акцизу.</b> Якщо броварня не хоче морочитися з поверненням — вона просто включить свій акциз у ціну. Ви зверху заплатите ще польський, і вся економія зникне. Закривайте це питання першим.</p>
+      </div>
+
+      <div class="copy">
+        <button class="cbtn" type="button" data-copy>Копіювати</button>
+        <pre>Are you registered as a certified consignor and can you open
+an e-SAD for a duty-paid intra-EU shipment to Poland?
+
+Will your price be net of your national excise duty, which
+you reclaim after our report of receipt? Or would you charge
+it on top?
+
+Please provide the degrees Plato for each SKU, and confirm
+whether the brewery qualifies as a small independent producer
+(under 200,000 hl/year) with self-certification on the e-SAD.</pre>
+      </div>
+
+      <div class="note info">
+        <p><b>Терміни легко переплутати.</b> На питання про <span class="mono">certified consignee</span> ваша відповідь — <b>так</b>: це і є <span class="mono">uprawniony odbiorca</span>. На <span class="mono">registered consignee</span> — <b>ні</b>: це <span class="mono">zarejestrowany odbiorca</span>, інший режим з документом e&#8209;AD. Помилкове «так» призведе до того, що постачальник відправить не тим режимом.</p>
+      </div>
+
+      <h3>EMCS, e-AD і e-SAD</h3>
+      <p>У торговців часто плутають: EMCS — це <b>система</b>, а e&#8209;AD та e&#8209;SAD — два різні документи всередині неї. <span class="mono">e-AD</span> — рух у процедурі призупинення акцизу, приймати може лише податковий склад або <span class="mono">zarejestrowany odbiorca</span>. <span class="mono">e-SAD</span> — рух зі сплаченим акцизом, між <span class="mono">uprawnionym wysyłającym</span> та <span class="mono">uprawnionym odbiorcą</span>. «Перейшли з e&#8209;SAD на EMCS» — беззмістовна фраза, хоча чути її можна часто.</p>
+    </section>
+
+    <section id="dribnytsi">
+      <h2>Дрібниці, які коштують грошей</h2>
+
+      <h3>Возіть кеги, не банки</h3>
+      <p>Система кауційна в повному обсязі з 1 січня 2026 охоплює банки до 1 л і скляні багаторазові пляшки до 1,5 л. Ввозячи такий товар самостійно, ви стаєте <span class="mono">wprowadzającym produkty w opakowaniach</span> з обов'язками BDO та <span class="mono">opłatą produktową</span>. <b>Кеги понад 1,5 л під систему не підпадають.</b></p>
+
+      <h3>Банделі не потрібні</h3>
+      <p>Пиво в Польщі не підлягає оклеюванню знаками акцизу — на відміну від міцного алкоголю й вина.</p>
+
+      <h3>Мінімального порогу немає</h3>
+      <p>Один кег = повна процедура. І окремо: привезти пиво власним автомобілем «для закладу» без e&#8209;SAD — це конфіскація товару плюс справа за KKS. Комерційна мета знімає будь-яке «для власного вжитку».</p>
+
+      <h3>Як отримати юридичну певність</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Спосіб</th><th>Вартість</th><th>Юридичний захист</th></tr></thead>
+          <tbody>
+            <tr><td>Інфолінія KIS, телефон</td><td>безкоштовно</td><td>немає</td></tr>
+            <tr><td>Порада бухгалтера</td><td>в обслуговуванні</td><td>немає</td></tr>
+            <tr><td><b>Interpretacja indywidualna</b> від Dyrektora KIS</td><td>≈40 zł, до 3 місяців</td><td><b>так</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Письмова інтерпретація захищає: діючи згідно з нею, покарання не отримаєш, навіть якщо позиція органу згодом зміниться. Варта вона питань про ліцензію й статус постачальника — акцизна механіка й так підтверджується системою на кожному кроці.</p>
+    </section>
+
+    <section id="formy">
+      <h2>Формуляри</h2>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Етап</th><th>Формуляр</th><th>Орган</th><th>Строк</th></tr></thead>
+          <tbody>
+            <tr><td>Конто PUESC + powiązanie</td><td class="mono">—</td><td>—</td><td>2–3 дні</td></tr>
+            <tr><td>Реєстрація фірми + CRPA</td><td class="mono">WRP0001</td><td>naczelnik US</td><td>кілька днів</td></tr>
+            <tr><td>Акцизний номер, постійний</td><td class="mono">WDAUO01</td><td>Dyrektor IAS w Poznaniu</td><td>до 7 днів</td></tr>
+            <tr><td>Акцизний номер, одноразовий</td><td class="mono">WDAUOJ01</td><td>Dyrektor IAS w Poznaniu</td><td>діє 3 місяці</td></tr>
+            <tr><td>Стан забезпечення</td><td class="mono">ZAB_SALDO</td><td>—</td><td>на вимогу</td></tr>
+            <tr><td>Реєстрація VAT-UE</td><td class="mono">VAT-R, C.3</td><td>naczelnik US</td><td>до першої WNT</td></tr>
+            <tr><td>Рух товару</td><td class="mono">e-SAD</td><td>EMCS PL2</td><td>відкриває постачальник</td></tr>
+            <tr><td>Приймання</td><td class="mono">Raport odbioru</td><td>EMCS PL2</td><td>5 робочих днів</td></tr>
+            <tr><td>Акциз</td><td class="mono">AKC-UA(3)</td><td>naczelnik US</td><td>10 днів</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px">Реєстраційна частина безкоштовна. Виняток: <span class="mono">opłata skarbowa</span> 17 zł, якщо заяву подає уповноважена особа, а не член правління за KRS.</p>
+    </section>
+
+    <footer>
+      <p>Підготовлено за офіційними джерелами PUESC, podatki.gov.pl і biznes.gov.pl та за практикою проходження реєстрації у вересні 2026 року. Це не індивідуальна податкова інтерпретація і не офіційна консультація — остаточний порядок дій залежить від моделі поставки та обставин діяльності.</p>
+      <p>Перед першою поставкою варто письмово підтвердити два пункти: від кого вам дозволено закуповуватися за законом про тверезість, і форму та розмір акцизного забезпечення.</p>
+    </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+(function(){
+  var qty=document.getElementById('qty'),vol=document.getElementById('vol'),
+      plato=document.getElementById('plato'),sp=document.getElementById('smallprod');
+  var oHl=document.getElementById('o-hl'),oAkc=document.getElementById('o-akc'),
+      oPer=document.getElementById('o-per'),oPeak=document.getElementById('o-peak');
+  var RATE=11.47;
+  function fmt(n,d){ if(!isFinite(n)) n=0;
+    return n.toLocaleString('uk-UA',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  function calc(){
+    var q=parseFloat(qty.value)||0, v=parseFloat(vol.value)||0, p=parseFloat(plato.value)||0;
+    var litres=q*v, hl=litres/100, rate=sp.checked?RATE/2:RATE, akc=hl*p*rate;
+    oHl.textContent=fmt(hl,2)+' гл';
+    oHl.nextElementSibling.textContent=fmt(litres,0)+' л';
+    oAkc.textContent=fmt(akc,0)+' zł';
+    oPer.textContent=litres>0?(fmt(akc/litres,2)+' zł за літр'):'—';
+    oPeak.textContent=fmt(akc*2,0)+' zł';
+  }
+  [qty,vol,plato].forEach(function(el){ el.addEventListener('input',calc); });
+  sp.addEventListener('change',calc);
+  calc();
+
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var pre=btn.parentNode.querySelector('pre'), txt=pre.textContent;
+      var done=function(){ var old=btn.textContent; btn.textContent='Скопійовано';
+        setTimeout(function(){ btn.textContent=old; },1600); };
+      try{ navigator.clipboard.writeText(txt).then(done,function(){ sel(pre,btn); }); }
+      catch(e){ sel(pre,btn); }
+    });
+  });
+  function sel(pre,btn){
+    try{
+      var r=document.createRange(); r.selectNodeContents(pre);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var old=btn.textContent; btn.textContent='Виділено — скопіюйте';
+      setTimeout(function(){ btn.textContent=old; },2200);
+    }catch(e){}
+  }
+})();
+</script>
+</body>
+</html>
